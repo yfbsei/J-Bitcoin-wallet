@@ -5,17 +5,6 @@ import { Signature, signSync, recoverPublicKey, verify, utils } from '@noble/sec
 // https://wiki.bitcoinsv.io/index.php/SIGHASH_flags
 // NOTE: Currently all BitcoinSV transactions require an additional SIGHASH flag called SIGHASH_FORKID
 // SIGHASH Values including SIGHASH_FORKID In HEX. Example: SIGHASH_FORKID(0x40) + SIGHASH_ALL(0x1) = 0x41
-const SIGH_HASH = {
-    SIGHASH_ALL: 0x41,   // Sign all inputs and outputs
-    SIGHASH_NONE: 0x42,  // Sign all inputs and no output
-    SIGHASH_SINGLE: 0x43, // Sign all inputs and the output with the same index
-    // SIGHASH_FORKID: 0x40,
-    ANYONECANPAY: {
-      SIGHASH_ALL: 0xC1, // Sign its own input and all outputs
-      SIGHASH_NONE: 0xC2, // Sign its own input and no output
-      SIGHASH_SINGLE: 0xC3 // Sign its own input and the output with the same index
-    }
-  }
 
 
 utils.hmacSha256Sync = (key, ...messages) => {
@@ -25,6 +14,18 @@ utils.hmacSha256Sync = (key, ...messages) => {
 }
 
 const ECDSA = {
+
+    SIGH_HASH: {
+        SIGHASH_ALL: 0x41,   // Sign all inputs and outputs
+        SIGHASH_NONE: 0x42,  // Sign all inputs and no output
+        SIGHASH_SINGLE: 0x43, // Sign all inputs and the output with the same index
+        // SIGHASH_FORKID: 0x40,
+        ANYONECANPAY: {
+          SIGHASH_ALL: 0xC1, // Sign its own input and all outputs
+          SIGHASH_NONE: 0xC2, // Sign its own input and no output
+          SIGHASH_SINGLE: 0xC3 // Sign its own input and the output with the same index
+        }
+      },
 
     sign(message, prikey) {
         const 

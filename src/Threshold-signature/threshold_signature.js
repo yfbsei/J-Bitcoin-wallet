@@ -16,13 +16,17 @@ class ThresholdSignature {
 		this.group_size = group_size;
 		this.polynomial_order = threshold - 1;
 		this.threshold = threshold;
-		//this.signature_threshold = 2 * threshold;
-
-		//this.polynomial_order < 1 || this.threshold > this.group_size || this.signature_threshold > this.group_size // error
+		//this.signature_threshold = 2 * threshold; //this.signature_threshold > this.group_size
+		
+		if(this.polynomial_order < 1 || this.threshold > this.group_size) {
+			throw new Error("Threshold is too high or low")
+		}
 		[this.shares, this.public_key] = this.jvrss();
 	}
 
-	shares_to_points = (shares = []) => shares.map((x, i) => [i + 1, x]);
+	shares_to_points(shares = []) {
+		return shares.map((x, i) => [i + 1, x]);
+	}
 
 	jvrss() {
 		const polynomials = new Array(this.group_size)
