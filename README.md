@@ -35,6 +35,7 @@ const wallet = Custodial_Wallet.fromMnemonic('main', mnemonic, 'password123');
 ### Derive child 
 `wallet.derive("m/0", 'pri');`
 \
+\
 Public Keys can't derive from a hardend path \
 `wallet.derive("m/0'", 'pub'); // Throws Error`
 
