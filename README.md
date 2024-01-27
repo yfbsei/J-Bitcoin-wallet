@@ -4,6 +4,7 @@ BitcoinSV Custodial &amp; non-Custodial Wallets | Threshold signature
 ## Getting started
 `npm i j-bsv`
 \
+\
 `import { Custodial_Wallet, Non_Custodial_Wallet } from 'j-bsv';`
 
 ## Custodial Wallet
