@@ -70,7 +70,7 @@ class Non_Custodial_Wallet extends ThresholdSignature {
 	constructor(net, group_size, threshold) {
 		super(group_size, threshold);
 		this.net = net;
-		[this.pub, this.address] = this.#wallet();
+		[this.publicKey, this.address] = this.#wallet();
 	}
 
 	static fromRandom(net = "main", group_size = 3, threshold = 2) {
@@ -90,7 +90,7 @@ class Non_Custodial_Wallet extends ThresholdSignature {
 
 		wallet.shares = shares.map(x => new BN(x, 'hex'));
 		wallet.public_key = Point.fromPrivateKey( wallet.privite_key().toBuffer() ); 
-		[wallet.pub, wallet.address] = wallet.#wallet();
+		[wallet.publicKey, wallet.address] = wallet.#wallet();
 
 		return wallet;
 	}

@@ -135,12 +135,13 @@ class ThresholdSignature {
 		return {
 			sig: new Signature( bufToBigint(r), bufToBigint(s) ),
 			serialized_sig,
-			msgHash,
+			msgHash: msgHash.toBuffer(),
 			recovery_id
 		};
 	}
 
 	static verify_threshold_signature(public_key, msgHash, sig) {
+	msgHash = new BN(msgHash);
 	const
 		w = new BN(utils.invert(sig.s, CURVE.n)),
 		u1 = w.mul(msgHash).umod(N).toBuffer('be', 32),
