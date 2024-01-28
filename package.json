@@ -1,18 +1,47 @@
 {
-  "name": "J-bsv",
+  "name": "j-bsv",
   "version": "1.0.0",
   "description": "BitcoinSV Custodial & non-Custodial Wallets",
-  "main": "wallet.js",
+  "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "mocha"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yfbsei/J-BSV.git"
+  },
   "type": "module",
-  "author": "",
+  "author": "yfbsei",
   "license": "ISC",
   "dependencies": {
     "@noble/secp256k1": "^1.6.3",
     "base58-js": "^1.0.4",
     "bigint-conversion": "^2.2.2",
     "bn.js": "^5.2.1"
-  }
+  },
+  "keywords": [
+    "secp256k1",
+    "secp",
+    "secp256",
+    "elliptic",
+    "elliptic curve",
+    "curve",
+    "signature",
+    "ecc",
+    "TTS",
+    "BSV",
+    "sig",
+    "bip0340",
+    "bip340",
+    "bitcoin",
+    "bip",
+    "ecdsa",
+    "endomorphism",
+    "cryptography",
+    "security",
+    "yfbsei",
+    "Jamallo",
+    "Threshold signature"
+  ]
 }
