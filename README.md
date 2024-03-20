@@ -3,7 +3,9 @@ Bitcoin Custodial &amp; non-Custodial Wallets | Threshold signature
 
 | BTC | ✔️ |
 \
+
 | BCH | ✔️ |
+
 \
 | BSV | ✔️ |
 
