@@ -1,5 +1,9 @@
-# J-BSV
-BitcoinSV Custodial &amp; non-Custodial Wallets | Threshold signature
+# J-Bitcoin
+Bitcoin Custodial &amp; non-Custodial Wallets | Threshold signature
+
+| BTC | ✔️ |
+| BCH | ✔️ |
+| BSV | ✔️ |
 
 ## Getting started
 `npm i j-bsv`
